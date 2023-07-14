@@ -2,6 +2,11 @@
 
 @section('contents')
     <div class="container">
+
+
+
+        <h1 class="mb-5">Lista Progetti:</h1>
+
         @if (session('delete_success'))
             @php $project = session('delete_success') @endphp
             <div class="alert alert-danger">
@@ -76,5 +81,6 @@
 
         <a class="btn btn-warning" href="{{ route('admin.projects.create', ['project' => $project->id]) }}">New Project</a>
         {{ $projects->links() }}
+
     </div>
 @endsection
