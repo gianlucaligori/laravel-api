@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('projects', [ProjectController::class, 'index'])->name('api.projects.index'); //AGGIUNTO 14 LUGLIO 14:27
+
+Route::get('projects/{projects}', [ProjectController::class, 'show'])->name('api.projects.show'); //AGGIUNTO 18 LUGLIO

@@ -21,18 +21,13 @@ class ProjectController extends Controller
         return response()->json($projects);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function show($id)
+    {
+        $project = Project::where('id', $id)->first();
+        return response()->json([
+            'success' => $project ? true : false,
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+            'results' => $project,
+        ]);
+    }
 }
